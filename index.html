@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function displayArr(arr) {
+        let sout = "";
+        for (let i = 0; i < arr.length; i++ ) {
+            sout += arr[i] + " ";
+            if (i % 10 === 9) {
+                sout += "<br/>";
+            }
+        }
+        return document.write(sout);
+    }
+
+    function findMin(arr) {
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++ ) {
+            if (min < arr[i]) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    function findMax(arr) {
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++ ) {
+            if (max > arr[i]) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    let nums = [];
+    for (let i = 0; i < 100; i++ ) {
+        nums[i] = Math.floor(Math.random()*101);
+    }
+    let minValue = findMin(nums);
+    let maxValue = findMax(nums);
+
+    displayArr(nums);
+    document.write("<br/>");
+    document.write("<br/>");
+    document.write("The minimum value is: " + minValue);
+    document.write("<br/>");
+    document.write("<br/>");
+    document.write("The maximum value is: " + maxValue);
+</script>
+
+</body>
+</html>
